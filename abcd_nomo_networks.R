@@ -198,7 +198,7 @@ for (dependent in dependents) {
             bifactor_formula = str_replace(bifactor_formula_raw, 'PHENOTYPE', phenotype)
             bifactor_formula = str_replace(bifactor_formula, 'DEPENDENT', dependent)
             model = cfa(bifactor_formula, 
-                        data=dat, std.lv = TRUE) # will need to z score the data I think
+                        data=dat, std.lv = TRUE) 
             design = svydesign(ids=~rel_family_id,
                                strata=~site_id_l, 
                                nest=TRUE, 
@@ -308,7 +308,7 @@ int ~~ 0*ext
 P ~ isFemale + Hispanic + Black + Other + Asian + College + Masters + Some_College + Associates + High_School + Marital_No + income_lt_50k + income_bw_50k_100k + Age
 '
 model = cfa(bifactor_formula_raw, 
-            data=dat, std.lv = TRUE) # will need to z score the data I think
+            data=dat, std.lv = TRUE) 
 design = svydesign(ids=~rel_family_id,
                    strata=~site_id_l, 
                    nest=TRUE, 
